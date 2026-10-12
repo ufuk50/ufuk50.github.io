@@ -1,0 +1,1879 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Muhammed Ufuk Özgül | Bilişim Öğrencisi</title>
+
+<style>
+
+/* =========================================================
+   GENEL
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+:root{
+    --bg:#050816;
+    --bg2:#0a1025;
+    --card:#10172d;
+    --card2:#141d38;
+    --white:#f5f7ff;
+    --text:#c4cbe0;
+    --blue:#4facfe;
+    --cyan:#00f5d4;
+    --purple:#8b5cf6;
+    --pink:#ff4ecd;
+    --red:#ff5c7a;
+    --yellow:#ffd166;
+    --border:rgba(255,255,255,.09);
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:
+        radial-gradient(circle at 10% 10%,rgba(79,172,254,.13),transparent 25%),
+        radial-gradient(circle at 90% 10%,rgba(139,92,246,.15),transparent 25%),
+        radial-gradient(circle at 50% 100%,rgba(0,245,212,.08),transparent 30%),
+        var(--bg);
+    color:var(--white);
+    line-height:1.6;
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+img{
+    max-width:100%;
+}
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#050816;
+}
+
+::-webkit-scrollbar-thumb{
+    background:linear-gradient(var(--blue),var(--purple));
+    border-radius:20px;
+}
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    z-index:999;
+    padding:17px 6%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(5,8,22,.72);
+    backdrop-filter:blur(20px);
+    border-bottom:1px solid var(--border);
+}
+
+.logo{
+    font-size:25px;
+    font-weight:900;
+    letter-spacing:2px;
+}
+
+.logo span{
+    color:var(--cyan);
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+    list-style:none;
+}
+
+.nav-links a{
+    color:#9da8c2;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:var(--cyan);
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:150px 7% 100px;
+    position:relative;
+}
+
+.grid-bg{
+    position:absolute;
+    inset:0;
+    opacity:.18;
+    background-image:
+        linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px);
+    background-size:50px 50px;
+    mask-image:linear-gradient(to bottom,black,transparent);
+}
+
+.hero-content{
+    position:relative;
+    max-width:1050px;
+    z-index:2;
+}
+
+.status{
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+    padding:9px 18px;
+    border:1px solid rgba(0,245,212,.25);
+    border-radius:50px;
+    background:rgba(0,245,212,.07);
+    color:var(--cyan);
+    margin-bottom:30px;
+    font-size:14px;
+}
+
+.status-dot{
+    width:9px;
+    height:9px;
+    border-radius:50%;
+    background:#00ff9d;
+    box-shadow:0 0 15px #00ff9d;
+}
+
+.hero h1{
+    font-size:clamp(3.5rem,9vw,8rem);
+    line-height:.9;
+    font-weight:1000;
+    letter-spacing:-5px;
+    background:linear-gradient(
+        90deg,
+        #fff,
+        var(--blue),
+        var(--purple),
+        var(--pink),
+        #fff
+    );
+    background-size:300%;
+    -webkit-background-clip:text;
+    color:transparent;
+    animation:gradient 7s linear infinite;
+}
+
+@keyframes gradient{
+    0%{background-position:0%}
+    50%{background-position:100%}
+    100%{background-position:0%}
+}
+
+.hero-subtitle{
+    margin-top:30px;
+    font-size:clamp(1.2rem,3vw,2rem);
+    color:var(--cyan);
+    font-weight:bold;
+}
+
+.hero-text{
+    max-width:760px;
+    margin:20px auto;
+    color:var(--text);
+    font-size:1.05rem;
+}
+
+.hero-buttons{
+    margin-top:35px;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 25px;
+    border-radius:13px;
+    font-weight:bold;
+    border:1px solid var(--border);
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-5px);
+}
+
+.btn-main{
+    background:linear-gradient(135deg,var(--blue),var(--purple));
+    box-shadow:0 10px 35px rgba(79,172,254,.18);
+}
+
+.btn-dark{
+    background:rgba(255,255,255,.05);
+}
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+section{
+    max-width:1400px;
+    margin:auto;
+    padding:110px 6%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-title small{
+    color:var(--cyan);
+    text-transform:uppercase;
+    letter-spacing:4px;
+    font-size:12px;
+}
+
+.section-title h2{
+    font-size:clamp(2.2rem,5vw,4rem);
+    margin-top:10px;
+}
+
+.section-title p{
+    color:#8e99b3;
+    max-width:700px;
+    margin:12px auto;
+}
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about-grid{
+    display:grid;
+    grid-template-columns:350px 1fr;
+    gap:30px;
+}
+
+.card{
+    background:linear-gradient(
+        145deg,
+        rgba(20,29,56,.9),
+        rgba(10,16,35,.9)
+    );
+    border:1px solid var(--border);
+    border-radius:25px;
+    box-shadow:0 25px 70px rgba(0,0,0,.2);
+}
+
+.profile{
+    padding:35px;
+    text-align:center;
+}
+
+.avatar{
+    width:175px;
+    height:175px;
+    margin:auto auto 25px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:45px;
+    font-weight:1000;
+    background:linear-gradient(
+        135deg,
+        var(--blue),
+        var(--purple),
+        var(--pink)
+    );
+    box-shadow:
+        0 0 40px rgba(79,172,254,.2),
+        inset 0 0 40px rgba(255,255,255,.1);
+}
+
+.profile h3{
+    font-size:25px;
+}
+
+.profile p{
+    color:#9aa5bd;
+}
+
+.student-badge{
+    margin-top:22px;
+    padding:12px;
+    background:rgba(0,245,212,.07);
+    border:1px solid rgba(0,245,212,.15);
+    border-radius:12px;
+    color:var(--cyan);
+}
+
+.about-content{
+    padding:40px;
+}
+
+.about-content h3{
+    font-size:30px;
+    margin-bottom:15px;
+}
+
+.about-content p{
+    color:var(--text);
+    margin-bottom:18px;
+}
+
+.highlight{
+    color:var(--cyan);
+    font-weight:bold;
+}
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+    margin-top:30px;
+}
+
+.stat{
+    padding:25px;
+    text-align:center;
+}
+
+.stat-number{
+    font-size:35px;
+    font-weight:1000;
+    color:var(--cyan);
+}
+
+.stat-label{
+    color:#8994ac;
+}
+
+/* =========================================================
+   SKILLS
+========================================================= */
+
+.skills{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.skill{
+    padding:30px;
+    transition:.35s;
+}
+
+.skill:hover{
+    transform:translateY(-10px);
+    border-color:rgba(0,245,212,.25);
+}
+
+.skill-icon{
+    font-size:50px;
+    margin-bottom:15px;
+}
+
+.skill h3{
+    margin-bottom:8px;
+}
+
+.skill p{
+    color:#929db6;
+    font-size:14px;
+}
+
+/* =========================================================
+   TERMINAL
+========================================================= */
+
+.terminal{
+    margin:70px auto 0;
+    max-width:900px;
+    background:#060b17;
+    border:1px solid #202b45;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 30px 80px rgba(0,0,0,.4);
+}
+
+.terminal-head{
+    padding:12px 17px;
+    background:#10182b;
+    display:flex;
+    gap:7px;
+}
+
+.circle{
+    width:12px;
+    height:12px;
+    border-radius:50%;
+}
+
+.red{background:#ff5f57}
+.yellow{background:#ffbd2e}
+.green{background:#28c840}
+
+.terminal-body{
+    padding:25px;
+    font-family:monospace;
+    color:#a7b3cb;
+    font-size:14px;
+}
+
+.green-text{color:#00ff9d}
+.blue-text{color:#4facfe}
+.purple-text{color:#b892ff}
+.cursor-blink{
+    animation:blink 1s infinite;
+}
+
+@keyframes blink{
+    50%{opacity:0}
+}
+
+/* =========================================================
+   SCHOOL LIFE
+========================================================= */
+
+.timeline{
+    max-width:900px;
+    margin:auto;
+    position:relative;
+}
+
+.timeline::before{
+    content:"";
+    position:absolute;
+    left:19px;
+    top:0;
+    bottom:0;
+    width:2px;
+    background:linear-gradient(var(--cyan),var(--purple),transparent);
+}
+
+.timeline-item{
+    margin-left:55px;
+    margin-bottom:25px;
+    padding:28px;
+    position:relative;
+}
+
+.timeline-item::before{
+    content:"";
+    position:absolute;
+    left:-43px;
+    top:28px;
+    width:14px;
+    height:14px;
+    background:var(--cyan);
+    border-radius:50%;
+    box-shadow:0 0 20px var(--cyan);
+}
+
+.timeline-item small{
+    color:var(--cyan);
+}
+
+.timeline-item h3{
+    margin:5px 0;
+}
+
+.timeline-item p{
+    color:#909bb4;
+}
+
+/* =========================================================
+   PROJECTS
+========================================================= */
+
+.projects{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.project{
+    padding:32px;
+    position:relative;
+    overflow:hidden;
+    transition:.3s;
+}
+
+.project:hover{
+    transform:translateY(-8px);
+}
+
+.project-number{
+    font-size:65px;
+    font-weight:1000;
+    color:rgba(79,172,254,.12);
+}
+
+.project h3{
+    margin-top:-10px;
+    font-size:22px;
+}
+
+.project p{
+    color:#919cb5;
+    margin-top:10px;
+}
+
+.tags{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    margin-top:20px;
+}
+
+.tag{
+    background:rgba(139,92,246,.12);
+    color:#c5b5ff;
+    border-radius:8px;
+    padding:5px 9px;
+    font-size:12px;
+}
+
+/* =========================================================
+   MEME INTRO
+========================================================= */
+
+.meme-warning{
+    max-width:900px;
+    margin:0 auto 50px;
+    padding:22px;
+    text-align:center;
+    background:rgba(255,209,102,.06);
+    border:1px solid rgba(255,209,102,.18);
+    border-radius:18px;
+    color:#e8d8a5;
+}
+
+/* =========================================================
+   MEMES
+========================================================= */
+
+.memes{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.meme{
+    overflow:hidden;
+    transition:.35s;
+}
+
+.meme:hover{
+    transform:translateY(-10px) rotate(-.5deg);
+    border-color:rgba(255,78,205,.25);
+}
+
+.meme-image{
+    width:100%;
+    height:230px;
+    object-fit:cover;
+    background:#080d1d;
+}
+
+.meme-content{
+    padding:24px;
+}
+
+.meme-content h3{
+    font-size:20px;
+    margin-bottom:10px;
+}
+
+.meme-content p{
+    color:#929db7;
+}
+
+.meme-caption{
+    margin-top:15px;
+    padding:10px 13px;
+    background:rgba(255,255,255,.04);
+    border-radius:10px;
+    color:var(--cyan);
+    font-size:13px;
+}
+
+/* =========================================================
+   MEME WALL
+========================================================= */
+
+.meme-wall{
+    margin-top:40px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.wall-item{
+    height:170px;
+    overflow:hidden;
+    border-radius:15px;
+    border:1px solid var(--border);
+}
+
+.wall-item img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.4s;
+}
+
+.wall-item:hover img{
+    transform:scale(1.1);
+}
+
+/* =========================================================
+   QUOTE
+========================================================= */
+
+.quote{
+    max-width:1000px;
+    margin:70px auto;
+    text-align:center;
+    padding:70px 30px;
+    border-radius:30px;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(79,172,254,.08),
+            rgba(139,92,246,.08)
+        );
+    border:1px solid var(--border);
+}
+
+.quote-big{
+    font-size:clamp(1.7rem,4vw,3rem);
+    font-weight:1000;
+}
+
+.quote-small{
+    margin-top:18px;
+    color:var(--cyan);
+}
+
+/* =========================================================
+   FUN FACTS
+========================================================= */
+
+.facts{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.fact{
+    padding:30px;
+    text-align:center;
+}
+
+.fact-icon{
+    font-size:45px;
+}
+
+.fact h3{
+    margin:12px 0;
+}
+
+.fact p{
+    color:#919bb3;
+}
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact{
+    max-width:950px;
+    margin:auto;
+    padding:50px;
+    text-align:center;
+}
+
+.contact h3{
+    font-size:32px;
+}
+
+.contact p{
+    color:#929db7;
+    max-width:650px;
+    margin:15px auto 30px;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+    border-top:1px solid var(--border);
+    padding:45px 6%;
+    text-align:center;
+    color:#78839d;
+}
+
+footer strong{
+    color:var(--cyan);
+}
+
+/* =========================================================
+   FLOATING BUTTON
+========================================================= */
+
+.top-button{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:linear-gradient(135deg,var(--blue),var(--purple));
+    cursor:pointer;
+    z-index:100;
+    box-shadow:0 10px 30px rgba(0,0,0,.4);
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1000px){
+
+    .about-grid{
+        grid-template-columns:1fr;
+    }
+
+    .skills,
+    .projects,
+    .memes{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .stats{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .meme-wall{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:650px){
+
+    .navbar{
+        padding:15px 5%;
+    }
+
+    .nav-links{
+        display:none;
+    }
+
+    section{
+        padding:75px 5%;
+    }
+
+    .hero h1{
+        letter-spacing:-2px;
+    }
+
+    .skills,
+    .projects,
+    .memes,
+    .facts{
+        grid-template-columns:1fr;
+    }
+
+    .stats{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .meme-wall{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .about-content,
+    .profile,
+    .contact{
+        padding:25px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<nav class="navbar">
+
+    <a href="#home" class="logo">
+        MU<span>Ö</span>
+    </a>
+
+    <ul class="nav-links">
+        <li><a href="#home">Ana Sayfa</a></li>
+        <li><a href="#about">Hakkımda</a></li>
+        <li><a href="#skills">Yetenekler</a></li>
+        <li><a href="#school">Okul</a></li>
+        <li><a href="#projects">Projeler</a></li>
+        <li><a href="#memes">Memeler 😂</a></li>
+        <li><a href="#contact">İletişim</a></li>
+    </ul>
+
+</nav>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero" id="home">
+
+    <div class="grid-bg"></div>
+
+    <div class="hero-content">
+
+        <div class="status">
+            <span class="status-dot"></span>
+            Şu anda kod yazıyor...
+        </div>
+
+        <h1>
+            MUHAMMED<br>
+            UFUK ÖZGÜL
+        </h1>
+
+        <div class="hero-subtitle">
+            &lt; 11. Sınıf Bilişim Öğrencisi /&gt;
+        </div>
+
+        <p class="hero-text">
+            Bilgisayarlarla uğraşan, web geliştirmeyi öğrenen,
+            projeler yapan ve bazen de 3 saat boyunca tek bir hatanın
+            nedenini arayan sıradan bir bilişim öğrencisi.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#about" class="btn btn-main">
+                👨‍💻 Beni Tanı
+            </a>
+
+            <a href="#memes" class="btn btn-dark">
+                😂 Meme Arşivine Git
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section id="about">
+
+    <div class="section-title">
+
+        <small>01 / HAKKIMDA</small>
+
+        <h2>Ben Kimim?</h2>
+
+        <p>
+            Biraz öğrenci, biraz yazılımcı, biraz hata ayıklayıcı...
+        </p>
+
+    </div>
+
+
+    <div class="about-grid">
+
+        <div class="card profile">
+
+            <div class="avatar">
+                MUÖ
+            </div>
+
+            <h3>Muhammed Ufuk Özgül</h3>
+
+            <p>11. Sınıf Bilişim Teknolojileri Öğrencisi</p>
+
+            <div class="student-badge">
+                🟢 Öğrenci modu aktif
+            </div>
+
+        </div>
+
+
+        <div class="card about-content">
+
+            <h3>Merhaba! 👋</h3>
+
+            <p>
+                Ben <span class="highlight">Muhammed Ufuk Özgül</span>.
+                11. sınıfta eğitim gören ve bilişim teknolojileri alanında
+                kendisini geliştirmeye çalışan bir öğrenciyim.
+            </p>
+
+            <p>
+                Bilgisayarlar, internet, yazılım, web tasarımı ve teknoloji
+                dünyası ilgimi çekiyor. Özellikle kendi web sitelerimi
+                hazırlamak ve öğrendiğim şeyleri projelere dönüştürmek
+                hoşuma gidiyor.
+            </p>
+
+            <p>
+                Şu anda HTML, CSS ve JavaScript gibi web teknolojileriyle
+                uğraşıyorum. Her yeni projede biraz daha fazla şey öğrenmeye
+                çalışıyorum.
+            </p>
+
+            <p>
+                Tabii öğrenci hayatının olmazsa olmazları da var:
+                sınavlar, ödevler, projeler, uykusuz geceler ve
+                "hocam bilgisayarımda çalışıyordu" cümlesi. 😂
+            </p>
+
+            <p>
+                Uzun vadede kendimi yazılım ve teknoloji alanında daha fazla
+                geliştirmek ve ciddi projeler ortaya çıkarmak istiyorum.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="stats">
+
+        <div class="card stat">
+            <div class="stat-number">11.</div>
+            <div class="stat-label">Sınıf</div>
+        </div>
+
+        <div class="card stat">
+            <div class="stat-number">∞</div>
+            <div class="stat-label">Öğrenme İsteği</div>
+        </div>
+
+        <div class="card stat">
+            <div class="stat-number">404</div>
+            <div class="stat-label">Hata Sayısı</div>
+        </div>
+
+        <div class="card stat">
+            <div class="stat-number">24/7</div>
+            <div class="stat-label">Teknoloji Merakı</div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SKILLS
+===================================================== -->
+
+<section id="skills">
+
+    <div class="section-title">
+
+        <small>02 / YETENEKLER</small>
+
+        <h2>Neler Öğreniyorum?</h2>
+
+        <p>
+            Henüz yolun başındayım ama öğrenmeye devam ediyorum.
+        </p>
+
+    </div>
+
+
+    <div class="skills">
+
+        <div class="card skill">
+
+            <div class="skill-icon">🌐</div>
+
+            <h3>HTML</h3>
+
+            <p>
+                Web sayfalarının temel yapısını oluşturmayı
+                ve semantik HTML kullanmayı öğreniyorum.
+            </p>
+
+        </div>
+
+
+        <div class="card skill">
+
+            <div class="skill-icon">🎨</div>
+
+            <h3>CSS</h3>
+
+            <p>
+                Modern tasarımlar, animasyonlar, responsive
+                tasarım ve renklerle uğraşıyorum.
+            </p>
+
+        </div>
+
+
+        <div class="card skill">
+
+            <div class="skill-icon">⚡</div>
+
+            <h3>JavaScript</h3>
+
+            <p>
+                Web sitelerine etkileşim kazandırmayı ve
+                JavaScript mantığını öğreniyorum.
+            </p>
+
+        </div>
+
+
+        <div class="card skill">
+
+            <div class="skill-icon">💻</div>
+
+            <h3>Bilgisayar</h3>
+
+            <p>
+                Donanım, yazılım, işletim sistemleri ve
+                teknoloji dünyasını araştırıyorum.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- TERMINAL -->
+
+    <div class="terminal">
+
+        <div class="terminal-head">
+
+            <span class="circle red"></span>
+            <span class="circle yellow"></span>
+            <span class="circle green"></span>
+
+        </div>
+
+        <div class="terminal-body">
+
+            <div>
+                <span class="green-text">muhammed@bilisim</span>:~$
+                <span class="blue-text">whoami</span>
+            </div>
+
+            <div>
+                Muhammed Ufuk Özgül
+            </div>
+
+            <br>
+
+            <div>
+                <span class="green-text">muhammed@bilisim</span>:~$
+                <span class="blue-text">education</span>
+            </div>
+
+            <div>
+                11. Sınıf Bilişim Teknolojileri
+            </div>
+
+            <br>
+
+            <div>
+                <span class="green-text">muhammed@bilisim</span>:~$
+                <span class="blue-text">status</span>
+            </div>
+
+            <div class="purple-text">
+                Öğreniyor... Kodluyor... Hata ayıklıyor...
+            </div>
+
+            <br>
+
+            <div>
+                <span class="green-text">muhammed@bilisim</span>:~$
+                <span class="cursor-blink">█</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SCHOOL LIFE
+===================================================== -->
+
+<section id="school">
+
+    <div class="section-title">
+
+        <small>03 / ÖĞRENCİ HAYATI</small>
+
+        <h2>11. Sınıf Günlükleri</h2>
+
+        <p>
+            Bilişim öğrencisinin bir günü...
+        </p>
+
+    </div>
+
+
+    <div class="timeline">
+
+        <div class="card timeline-item">
+
+            <small>07:30 — SABAH</small>
+
+            <h3>Okula Uyanış 😴</h3>
+
+            <p>
+                Alarm çalar. Alarm ertelenir.
+                Tekrar çalar. Tekrar ertelenir.
+                Sonunda "geç kaldım!" denilerek yataktan kalkılır.
+            </p>
+
+        </div>
+
+
+        <div class="card timeline-item">
+
+            <small>08:30 — DERS</small>
+
+            <h3>Bugün Çok Çalışacağım 💪</h3>
+
+            <p>
+                Derse girilir. Defter açılır.
+                İlk 10 dakika not tutulur.
+                Sonra beynin RAM'i dolar.
+            </p>
+
+        </div>
+
+
+        <div class="card timeline-item">
+
+            <small>10:30 — BİLİŞİM</small>
+
+            <h3>Kod Zamanı 💻</h3>
+
+            <p>
+                Bilgisayar açılır. VS Code açılır.
+                Öğretmen örnek kodu gösterir.
+                Her şey kolay görünür.
+                Eve gelince hiçbir şey çalışmaz.
+            </p>
+
+        </div>
+
+
+        <div class="card timeline-item">
+
+            <small>12:30 — ÖĞLE</small>
+
+            <h3>En Önemli Ders 🍔</h3>
+
+            <p>
+                Öğle arası.
+                Öğrencinin gün içindeki en yüksek motivasyon seviyesi.
+            </p>
+
+        </div>
+
+
+        <div class="card timeline-item">
+
+            <small>15:40 — ÇIKIŞ</small>
+
+            <h3>Özgürlük! 🚀</h3>
+
+            <p>
+                Okul bitti.
+                Eve gidilir.
+                "Bugün erkenden yatacağım."
+                denilir.
+            </p>
+
+        </div>
+
+
+        <div class="card timeline-item">
+
+            <small>23:59 — GERÇEKLER</small>
+
+            <h3>Proje Teslimi 💀</h3>
+
+            <p>
+                "Abi daha 10 dakika var."
+                cümlesiyle proje yapılmaya başlanır.
+                Sabaha karşı biter.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PROJECTS
+===================================================== -->
+
+<section id="projects">
+
+    <div class="section-title">
+
+        <small>04 / PROJELER</small>
+
+        <h2>Projelerim</h2>
+
+        <p>
+            Öğrenirken geliştirdiğim ve geliştirmeyi planladığım çalışmalar.
+        </p>
+
+    </div>
+
+
+    <div class="projects">
+
+        <div class="card project">
+
+            <div class="project-number">01</div>
+
+            <h3>Kişisel Portföy</h3>
+
+            <p>
+                Kendimi tanıtmak ve öğrendiğim web teknolojilerini
+                uygulamak için hazırladığım kişisel web sitesi.
+            </p>
+
+            <div class="tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">Responsive</span>
+            </div>
+
+        </div>
+
+
+        <div class="card project">
+
+            <div class="project-number">02</div>
+
+            <h3>JavaScript Denemeleri</h3>
+
+            <p>
+                JavaScript öğrenirken yaptığım küçük uygulamalar,
+                butonlar, sayaçlar ve etkileşimli sayfalar.
+            </p>
+
+            <div class="tags">
+                <span class="tag">JavaScript</span>
+                <span class="tag">DOM</span>
+                <span class="tag">UI</span>
+            </div>
+
+        </div>
+
+
+        <div class="card project">
+
+            <div class="project-number">03</div>
+
+            <h3>Gelecek Proje 🚀</h3>
+
+            <p>
+                Şimdilik gizli.
+                Fakat proje büyüdükçe dosya sayısı ve hata sayısı
+                da büyüyecek.
+            </p>
+
+            <div class="tags">
+                <span class="tag">Coming Soon</span>
+                <span class="tag">???</span>
+                <span class="tag">🚀</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MEME SECTION
+===================================================== -->
+
+<section id="memes">
+
+    <div class="section-title">
+
+        <small>05 / MEME ARŞİVİ</small>
+
+        <h2>💀 Bilişimci Memeleri</h2>
+
+        <p>
+            Çünkü yazılımcıların da gülmeye ihtiyacı var.
+        </p>
+
+    </div>
+
+
+    <div class="meme-warning">
+
+        ⚠️ <strong>UYARI:</strong>
+        Bu bölüm bilişim öğrencilerinin yaşadığı gerçek olaylardan
+        esinlenmiştir. Fazla gerçek olabilir.
+
+    </div>
+
+
+    <div class="memes">
+
+
+        <!-- MEME 1 -->
+
+        <div class="card meme">
+
+            <img
+                class="meme-image"
+                src="https://media.giphy.com/media/13HgwGsXF0aiGY/giphy.gif"
+                alt="Coding meme"
+            >
+
+            <div class="meme-content">
+
+                <h3>
+                    Kodun neden çalışmadığını anlamaya çalışırken
+                </h3>
+
+                <p>
+                    2 saat boyunca kodu incelersin.
+                    Sonra fark edersin ki değişkenin sonunda
+                    bir harf yanlış yazılmış.
+                </p>
+
+                <div class="meme-caption">
+                    "BEN BUNU NASIL GÖRMEDİM?"
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- MEME 2 -->
+
+        <div class="card meme">
+
+            <img
+                class="meme-image"
+                src="https://media.giphy.com/media/LmNwrBhejkK9EFP504/giphy.gif"
+                alt="Computer meme"
+            >
+
+            <div class="meme-content">
+
+                <h3>
+                    Öğretmen bilgisayarın başına gelince
+                </h3>
+
+                <p>
+                    Az önce 15 tane hata veren proje,
+                    öğretmen gelince mucizevi şekilde çalışır.
+                </p>
+
+                <div class="meme-caption">
+                    "HOCAM NORMALDE ÇALIŞMIYORDU."
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- MEME 3 -->
+
+        <div class="card meme">
+
+            <img
+                class="meme-image"
+                src="https://media.giphy.com/media/NT5ZfZWDQZb7W/giphy.gif"
+                alt="Programming meme"
+            >
+
+            <div class="meme-content">
+
+                <h3>
+                    Stack Overflow'a giriş
+                </h3>
+
+                <p>
+                    Arama yapılır.
+                    2017 tarihli bir cevap bulunur.
+                    Kod kopyalanır.
+                    Çalışır.
+                    Neden çalıştığı bilinmez.
+                </p>
+
+                <div class="meme-caption">
+                    "TEŞEKKÜRLER 2017'DEKİ ABİ."
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- MEME 4 -->
+
+        <div class="card meme">
+
+            <img
+                class="meme-image"
+                src="https://media.giphy.com/media/26tn33aiTi1jkl6H6/giphy.gif"
+                alt="Programming reaction"
+            >
+
+            <div class="meme-content">
+
+                <h3>
+                    Kod sonunda çalıştı
+                </h3>
+
+                <p>
+                    Saatlerce uğraştıktan sonra proje çalışır.
+                    Hiçbir şeye dokunmaya cesaret edemezsin.
+                </p>
+
+                <div class="meme-caption">
+                    "SAKIN DOKUNMA. ÇALIŞIYOR."
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- MEME 5 -->
+
+        <div class="card meme">
+
+            <img
+                class="meme-image"
+                src="https://media.giphy.com/media/3o7aD6Kv8wm6VGw8bS/giphy.gif"
+                alt="Funny programming gif"
+            >
+
+            <div class="meme-content">
+
+                <h3>
+                    "Çok kolay bir proje"
+                </h3>
+
+                <p>
+                    Projeye başlanır.
+                    5 dakika sonra 18 sekme açılmıştır.
+                    4 tanesi Stack Overflow.
+                    3 tanesi YouTube.
+                </p>
+
+                <div class="meme-caption">
+                    "BEN BU İŞİ BİTİRİRİM."
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- MEME 6 -->
+
+        <div class="card meme">
+
+            <img
+                class="meme-image"
+                src="https://media.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif"
+                alt="Funny reaction gif"
+            >
+
+            <div class="meme-content">
+
+                <h3>
+                    Deadline'a 1 saat kala
+                </h3>
+
+                <p>
+                    Normalde 3 günde yapılacak proje,
+                    bir anda dünyanın en hızlı yazılım geliştirme
+                    sürecine dönüşür.
+                </p>
+
+                <div class="meme-caption">
+                    "KAHVE GETİRİN. ACİL."
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- MEME WALL -->
+
+    <div style="text-align:center;margin-top:80px;margin-bottom:30px;">
+
+        <h3 style="font-size:30px;">
+            😂 Mini Meme Duvarı
+        </h3>
+
+        <p style="color:#8994ad;">
+            İnternetten gelen küçük bir eğlence köşesi.
+        </p>
+
+    </div>
+
+
+    <div class="meme-wall">
+
+        <div class="wall-item">
+            <img
+                src="https://media.giphy.com/media/1dIo6kDOPMzsnMOEgk/giphy.gif"
+                alt="Meme gif"
+            >
+        </div>
+
+        <div class="wall-item">
+            <img
+                src="https://media.giphy.com/media/5Zesu5VPNGJlm/giphy.gif"
+                alt="Meme gif"
+            >
+        </div>
+
+        <div class="wall-item">
+            <img
+                src="https://media.giphy.com/media/5VKbvrjxpVJCM/giphy.gif"
+                alt="Meme gif"
+            >
+        </div>
+
+        <div class="wall-item">
+            <img
+                src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif"
+                alt="Meme gif"
+            >
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     QUOTE
+===================================================== -->
+
+<div class="quote">
+
+    <div class="quote-big">
+        "Kod çalışıyorsa dokunma."
+    </div>
+
+    <div class="quote-small">
+        — Bilişim öğrencileri tarafından onaylanmıştır. ✓
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     FUN FACTS
+===================================================== -->
+
+<section>
+
+    <div class="section-title">
+
+        <small>06 / FUN FACTS</small>
+
+        <h2>Hakkımda Rastgele Bilgiler</h2>
+
+    </div>
+
+
+    <div class="facts">
+
+        <div class="card fact">
+
+            <div class="fact-icon">☕</div>
+
+            <h3>Kahve / Enerji</h3>
+
+            <p>
+                Kod yazarken motivasyon seviyesiyle
+                kahve tüketimi arasında garip bir ilişki var.
+            </p>
+
+        </div>
+
+
+        <div class="card fact">
+
+            <div class="fact-icon">💻</div>
+
+            <h3>Bilgisayar</h3>
+
+            <p>
+                "Biraz bilgisayara bakacağım."
+                cümlesi genellikle birkaç saat sürer.
+            </p>
+
+        </div>
+
+
+        <div class="card fact">
+
+            <div class="fact-icon">🚀</div>
+
+            <h3>Hedef</h3>
+
+            <p>
+                Daha fazla öğrenmek, daha iyi projeler yapmak
+                ve kendimi sürekli geliştirmek.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section id="contact">
+
+    <div class="section-title">
+
+        <small>07 / İLETİŞİM</small>
+
+        <h2>Benimle İletişime Geç</h2>
+
+    </div>
+
+
+    <div class="card contact">
+
+        <h3>
+            Bir proje mi var? 🚀
+        </h3>
+
+        <p>
+            Bu bölüme daha sonra Instagram, GitHub, Discord,
+            e-posta veya diğer sosyal medya hesaplarımı ekleyebilirim.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="mailto:ornek@email.com" class="btn btn-main">
+                📧 E-Mail
+            </a>
+
+            <a href="#home" class="btn btn-dark">
+                🏠 Ana Sayfa
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <p>
+        © <span id="year"></span>
+        <strong>Muhammed Ufuk Özgül</strong>
+    </p>
+
+    <p style="margin-top:8px;">
+        11. Sınıf Bilişim Teknolojileri Öğrencisi
+    </p>
+
+    <p style="margin-top:15px;">
+        Kodlandı 💻 • Tasarlandı 🎨 • Debuglandı 💀
+    </p>
+
+</footer>
+
+
+<!-- BACK TO TOP -->
+
+<div
+    class="top-button"
+    onclick="window.scrollTo({top:0,behavior:'smooth'})"
+>
+    ↑
+</div>
+
+
+<script>
+
+/* YIL */
+
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+
+/* SAYFA AÇILINCA */
+
+window.addEventListener("load",function(){
+
+    console.log(
+        "%c👋 Muhammed Ufuk Özgül'ün sitesine hoş geldin!",
+        "color:#00f5d4;font-size:18px;font-weight:bold;"
+    );
+
+    console.log(
+        "%c💻 Kod çalışıyor. Lütfen dokunmayın.",
+        "color:#4facfe;font-size:14px;"
+    );
+
+});
+
+
+/* KONAMI BENZERİ EĞLENCELİ TUŞ */
+
+let keys=[];
+
+document.addEventListener("keydown",function(e){
+
+    keys.push(e.key.toLowerCase());
+
+    if(keys.length>10){
+        keys.shift();
+    }
+
+    if(keys.join("").includes("muhammed")){
+
+        document.body.style.background =
+            "linear-gradient(135deg,#09001c,#001b1b,#16001f)";
+
+        alert(
+            "😂 Gizli özellik bulundu!\n\n" +
+            "Tebrikler, geliştirici modunu keşfettin."
+        );
+
+        keys=[];
+
+    }
+
+});
+
+
+/* MEME RESİMLERİ YÜKLENEMEZSE */
+
+document.querySelectorAll("img").forEach(function(img){
+
+    img.addEventListener("error",function(){
+
+        img.style.display="none";
+
+        const parent=img.parentElement;
+
+        parent.style.background =
+            "linear-gradient(135deg,#151d36,#261642)";
+
+        parent.innerHTML +=
+            "<div style='padding:60px 20px;text-align:center;color:#00f5d4;font-weight:bold;'>😂 GIF YÜKLENEMEDİ<br><small style='color:#8994ad'>İnternet bağlantısını kontrol et.</small></div>";
+
+    });
+
+});
+
+
+/* KONSOLE EĞLENCELİ MESAJ */
+
+console.log(
+`
+╔════════════════════════════════════╗
+║     MUHAMMED UFUK ÖZGÜL            ║
+║     11. SINIF BİLİŞİM              ║
+║                                    ║
+║     Status: Coding...              ║
+║     Errors: Probably many 💀       ║
+║     Coffee: Required ☕            ║
+╚════════════════════════════════════╝
+`
+);
+
+</script>
+
+</body>
+</html>
